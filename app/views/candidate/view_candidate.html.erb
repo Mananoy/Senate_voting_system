@@ -1,0 +1,56 @@
+<h1 class="ui header">
+  Candidates
+  <%= link_to '/page/admin/new' , class: "ui primary right floated button" do %>
+    <i class="add icon"></i> New candidate
+  <% end %>
+</h1>
+
+<%= semantic_flash %>
+
+<table class="ui table">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Surname</th>
+    <th>State</th>
+    <th>PartyAb</th>
+    <th>PartyName</th>
+    <th>CandidateNumber</th>
+    <th>Action</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @candidate.each do |c| %>
+    <tr>
+      <td><%= c.Name %></td>
+      <td><%= c.Surname %></td>
+      <td><%= c.State %></td>
+      <td><%= c.PartyAb %></td>
+      <td><%= c.PartyName %></td>
+      <td><%= c.CandidateNumber %></td>
+      <td>
+        <div class="ui small basic buttons">
+          <%= link_to c, class: "ui button" do %>
+            <i class="eye icon"></i> Show
+          <% end %>
+          <%= link_to edit_candidate_path(c), class: "ui button" do %>
+            <i class="edit icon"></i> Edit
+          <% end %>
+          <%= link_to candidate_delete_path(c), method: :delete , class: "ui button" do %>
+            <i class="remove icon"></i> Destroy
+          <% end %>
+        </div>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<div class="ui basic buttons">
+  <%= link_to "/page/admin", class: "ui button" do %>
+    <i class="chevron left icon"></i> Back
+  <% end %>
+</div>

@@ -1,0 +1,51 @@
+<%= semantic_flash %>
+
+<div class="ui card">
+  <div class="content">
+    <div class="ui divided very relaxed list">
+      <div class="item">
+        <div class="header">
+          Name
+        </div>
+        <%= @candidate.Name %>
+      </div>
+      <div class="item">
+        <div class="header">
+         Surname
+        </div>
+        <%= @candidate.Surname %>
+      </div>
+
+      <div class="item">
+        <div class="header">
+          state
+        </div>
+        <%= @candidate.State %>
+      </div>
+      <div class="item">
+        <div class="header">
+          PartyAb
+        </div>
+        <%= @candidate.PartyAb %>
+      </div>
+      <div class="item">
+        <div class="header">
+          PartyName
+        </div>
+        <%= @candidate.PartyName %>
+      </div>
+      <div class="item">
+        <div class="header">
+          CandidateNumber
+        </div>
+        <%= @candidate.CandidateNumber %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ui basic buttons">
+  <%= link_to '/page/admin/view_candidate', class: "ui button" do %>
+    <i class="chevron left icon"></i> Back
+  <% end %>
+</div>

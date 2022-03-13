@@ -1,0 +1,28 @@
+<%= semantic_flash %>
+
+<h1 class="ui header">
+  <%= link_to '/page/admin' do %>
+    <button class="big ui animated teal button right floated" tabindex="0">
+      <div class="visible content">
+        Login as Commissioner
+      </div>
+      <div class="hidden content">
+        <i class="user secret icon"></i>
+      </div>
+    </button>
+  <% end %>
+
+  <%= link_to '/page/voter' do %>
+    <button class="big ui animated purple button right floated" tabindex="0">
+      <div class="visible content">
+        Vote
+      </div>
+      <div class="hidden content">
+        <i class="edit outline icon"></i>
+      </div>
+    </button>
+  <% end %>
+
+</h1>
+<br><br><br>
+<img class="ui right floated image" src=<%=image_path('Election-Vote-icon.png')%> alt="Vote!!">

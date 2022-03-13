@@ -1,0 +1,37 @@
+<%= form_with(model: candidate, url: '/page/admin/create', html: { class: "ui form" }) do |form| %>
+
+  <div class="field">
+    <%= form.label :Name %>
+    <%= form.text_field :Name, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Surname %>
+    <%= form.text_field :Surname, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :State%>
+    <%= select :candidate, :State, ['SA','WA','VIC','NSW','QLD','NT','ACT','TAS'] %>
+  </div>
+
+  <div class="field">
+    <%= form.label :PartyAb%>
+    <%= form.text_field :PartyAb, autofocus:true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :PartyName%>
+    <%= form.text_field :PartyName %>
+  </div>
+
+  <div class="field">
+    <%= form.label :CandidateNumber%>
+    <%= form.text_field :CandidateNumber%>
+  </div>
+
+
+  <div class="actions">
+    <%= form.submit class: "ui primary button" %>
+  </div>
+<% end %>

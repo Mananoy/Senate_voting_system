@@ -1,0 +1,54 @@
+<%= form_with(model: voter, url: '/page/voter/create_voter', html: { class: "ui form" }) do |form| %>
+
+  <% if voter.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(voter.errors.count, "error") %> prohibited this movie from being saved:</h2>
+
+      <ul>
+        <% voter.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :Name %>
+    <%= form.text_field :Name, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Gender%>
+    <%= select :voter, :Gender, ['Male','Female','Other'] %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Title%>
+    <%= select :voter, :Title, ['Mr','Mrs','etc'] %>
+  </div>
+
+  <div class="field">
+    <%= form.label :PhoneNumber%>
+    <%= form.text_field :PhoneNumber %>
+  </div>
+
+  <div class="field">
+    <%= form.label :CitizenNumber%>
+    <%= form.text_field :CitizenNumber%>
+  </div>
+
+  <div class="field">
+    <%= form.label :Address %>
+    <%= form.text_area :Address %>
+  </div>
+
+  <div class="field inline">
+    <%= form.label :date_of_birth %>
+    <br/>
+    <%= form.date_select :date_of_birth %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "ui primary button" %>
+  </div>
+<% end %>

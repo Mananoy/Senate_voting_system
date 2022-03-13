@@ -1,0 +1,28 @@
+<div class="ui green inverted segment">
+  <a class="ui blue right ribbon label">1st</a>
+  <h1><%= @candidate[0].Name + ' ' + @candidate[0].Surname + ' , ' + @candidate[0].State %></h1>
+  <h2><%= @candidate[0].PartyName %></h2>
+  <h2 class="ui right aligned header" ><%= @sum_0.round(2).to_s + '%' %></h2>
+</div>
+
+<div class="ui red secondary inverted segment">
+  <a class="ui teal right ribbon label">2nd</a>
+  <h1><%= @candidate[1].Name + ' ' + @candidate[1].Surname + ' , ' + @candidate[1].State %></h1>
+  <h2><%= @candidate[1].PartyName %></h2>
+  <h2 class="ui right aligned header"><%= @sum_1.round(2).to_s + '%' %></h2>
+</div>
+
+<div class="ui red tertiary inverted segment">
+  <a class="ui olive right ribbon label">3rd</a>
+  <h1><%= @candidate[2].Name + ' ' + @candidate[2].Surname + ' , ' + @candidate[2].State %></h1>
+  <h2><%= @candidate[2].PartyName %></h2>
+  <h2 class="ui right aligned header"><%= @sum_2.round(2).to_s + '%' %></h2>
+</div>
+
+<br>
+
+<div class="ui basic buttons">
+  <%= link_to "/page/admin", class: "ui button" do %>
+    <i class="chevron left icon"></i> Back
+  <% end %>
+</div>

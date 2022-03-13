@@ -1,0 +1,103 @@
+<h1 class="ui header">
+  Welcome to vote page!
+</h1>
+<%= semantic_flash %>
+<br>
+<h2 class="ui header">
+  You may vote in one of two ways
+  Either:
+</h2>
+<h2>Above the line:</h2>
+<h3>
+  By numbering at most 6 of these boxes in the order
+  of your choice (with number
+  1 as your first choice)
+</h3>
+
+<%= form_with(url: '/page/voter/voting_above', html: { class: "ui form" }) do |form| %>
+  <table class="ui fixed table">
+    <thead>
+    <tr>
+      <th>PartyName</th>
+      <th>Number</th>
+    </tr>
+    </thead>
+    <% @name = 'number' %>
+    <% @count = 1 %>
+    <% @party.each do |partyName| %>
+      <% @name = @name + @count.to_s %>
+      <% @count = @count + 1 %>
+      <tr>
+        <td>
+          <div class="field">
+            <% @party_name = partyName %>
+            <%= form.text_field @party_name, value: partyName, :readonly => true%>
+          </div>
+        </td>
+        <td class="right aligned">
+          <div class="field">
+            <%= form.select @name, [' ','1','2','3','4','5','6'] %>
+          </div>
+        </td>
+      </tr>
+      <% @name = 'number' %>
+    <% end %>
+  </table>
+  <div class="actions">
+    <%= form.submit class: "ui primary button" %>
+  </div>
+<% end %>
+
+<br><br><hr>
+
+<h2>Or:</h2>
+<h2>Below the line:</h2>
+<h3>
+  By numbering at most 12 of these boxes in the order
+  of your choice (with number
+  1 as your first choice)
+</h3>
+
+<%= form_with(url: '/page/voter/voting_below', html: { class: "ui form" }) do |form| %>
+  <table class="ui fixed table">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Surname</th>
+      <th>State</th>
+      <th>PartyAb</th>
+      <th>PartyName</th>
+      <th>CandidateID</th>
+      <th>Number</th>
+    </tr>
+    </thead>
+    <% @name = 'number' %>
+    <% @count = 1 %>
+    <% @candidate.each do |candidate| %>
+      <% @name = @name + @count.to_s %>
+      <% @count = @count + 1 %>
+      <tr>
+        <td><%= candidate.Name %></td>
+        <td><%= candidate.Surname %></td>
+        <td><%= candidate.State %></td>
+        <td><%= candidate.PartyAb %></td>
+        <td><%= candidate.PartyName %></td>
+        <td>
+          <div class="field">
+            <% @name = candidate.id %>
+            <%= form.text_field @name, value: candidate.id, :readonly => true%>
+          </div>
+        </td>
+        <td class="right aligned">
+          <div class="field">
+            <%= form.select @name, [' ','1','2','3','4','5','6','7','8','9','10','11','12'] %>
+          </div>
+        </td>
+      </tr>
+      <% @name = 'number' %>
+    <% end %>
+  </table>
+  <div class="actions">
+    <%= form.submit class: "ui primary button" %>
+  </div>
+<% end %>

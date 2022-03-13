@@ -1,0 +1,51 @@
+<h1 class="ui header">Welcome to commissioner page</h1>
+<%= semantic_flash %>
+<br/><br/>
+
+<div class="ui one column centered grid">
+  <div class="column">
+    <%= link_to '/page/admin/view_candidate' do %>
+      <button class="massive fluid ui animated blue button floated" tabindex="0">
+        <div class="visible content">
+          View candidates
+        </div>
+        <div class="hidden content">
+          <i class="users icon"></i>
+        </div>
+      </button>
+    <% end %>
+  </div>
+
+  <div class="column">
+    <%= link_to '/page/admin/new' do %>
+      <button class="massive fluid ui vertical animated purple button floated" tabindex="0">
+        <div class="visible content">
+          Add new candidate
+        </div>
+        <div class="hidden content">
+          <i class="edit outline icon"></i>
+        </div>
+      </button>
+    <% end %>
+  </div>
+
+  <div class="column">
+    <%= link_to '/page/admin/show_winning' do %>
+      <button class="massive fluid ui animated fade red button floated" tabindex="0">
+        <div class="visible content">
+          Show winning candidates
+        </div>
+        <div class="hidden content">
+          <i class="user icon"></i>
+        </div>
+      </button>
+    <% end %>
+  </div>
+</div>
+
+<br/><br/>
+<div class="ui basic buttons">
+  <%= link_to page_path, class: "ui button" do %>
+    <i class="chevron left icon"></i> Back
+  <% end %>
+</div>

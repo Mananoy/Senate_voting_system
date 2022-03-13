@@ -1,24 +1,7 @@
-# README
+# This is a copy of Ruby group project Senate Voting system
 
-This README would normally document whatever steps are necessary to get the
-application up and running
+### Autohr: Zihao Lin and other 5 members.
 
-Things you may want to cover:
+### Time: 2021 S1
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Link to exampl: https://group07-21-s1-esas.herokuapp.com/
